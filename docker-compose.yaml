@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80  
+    environment:
+      WORDPRESS_DB_HOST: 192.168.56.1
+      WORDPRESS_DB_USER: db_user
+      WORDPRESS_DB_PASSWORD: db_pass
+      WORDPRESS_DB_NAME: db_test
+    volumes:
+      - ./html:/var/www/html 
+
+volumes:
+  html: 
